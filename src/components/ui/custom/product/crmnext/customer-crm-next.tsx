@@ -6,68 +6,27 @@ import icon from "../../../../../assets/customer/icon1.png";
 
 const customers = [
   {
-    image: cus1,
+    image: cus1.src, // Use the src property for string compatibility
     name: "Robert Jameson",
     position: "Chairman",
     feedback:
       "If I knew how easy it would be to stand up chatbots and how much benefit we would be able to drive with them, I would have started sooner.",
   },
   {
-    image: cus2,
+    image: cus2.src,
     name: "Emily Clark",
     position: "CEO",
     feedback:
       "Our chatbot solution revolutionized our customer service experience. The process was seamless!",
   },
   {
-    image: cus3,
+    image: cus3.src,
     name: "Michael Smith",
     position: "Director",
     feedback:
       "The benefits we gained from this solution were beyond our expectations. Highly recommend it!",
   },
-  {
-    image: cus1,
-    name: "Robert Jameson",
-    position: "Chairman",
-    feedback:
-      "If I knew how easy it would be to stand up chatbots and how much benefit we would be able to drive with them, I would have started sooner.",
-  },
-  {
-    image: cus2,
-    name: "Emily Clark",
-    position: "CEO",
-    feedback:
-      "Our chatbot solution revolutionized our customer service experience. The process was seamless!",
-  },
-  {
-    image: cus3,
-    name: "Michael Smith",
-    position: "Director",
-    feedback:
-      "The benefits we gained from this solution were beyond our expectations. Highly recommend it!",
-  },
-  {
-    image: cus1,
-    name: "Robert Jameson",
-    position: "Chairman",
-    feedback:
-      "If I knew how easy it would be to stand up chatbots and how much benefit we would be able to drive with them, I would have started sooner.",
-  },
-  {
-    image: cus2,
-    name: "Emily Clark",
-    position: "CEO",
-    feedback:
-      "Our chatbot solution revolutionized our customer service experience. The process was seamless!",
-  },
-  {
-    image: cus3,
-    name: "Michael Smith",
-    position: "Director",
-    feedback:
-      "The benefits we gained from this solution were beyond our expectations. Highly recommend it!",
-  },
+  // Add additional customers as needed
 ];
 
 export const CustomerCrmNext = () => {

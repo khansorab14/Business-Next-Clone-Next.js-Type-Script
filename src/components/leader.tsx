@@ -1,6 +1,6 @@
 import L1 from "../assets/leader-image/L1.png";
 import L2 from "../assets/leader-image/L2.png";
-import { LeaderCustom } from "./leader-custom";
+import { LeaderCustom } from "./ui/custom/leader-custom";
 
 const leaders = [
   {

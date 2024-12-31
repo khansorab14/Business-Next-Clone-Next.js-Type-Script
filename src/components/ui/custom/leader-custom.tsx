@@ -1,16 +1,14 @@
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import CustomSwiper from "./swiper";
-
-interface LeaderData {
-  image: string;
-  description: string;
-}
 
 interface LeaderProps {
   title: string;
   backgroundColor?: string;
-  leaderData: LeaderData[];
+  leaderData: {
+    image: StaticImageData | string;
+    description: string;
+  }[];
   slidesPerView?: number;
   spaceBetween?: number;
   breakpoints?: Record<number, { slidesPerView: number; spaceBetween: number }>;
@@ -42,6 +40,7 @@ export const LeaderCustom: React.FC<LeaderProps> = ({
         {/* Swiper Section */}
         <div className="w-screen max-w-full">
           <CustomSwiper
+            style={{}}
             slidesPerView={slidesPerView}
             spaceBetween={spaceBetween}
             breakpoints={breakpoints}

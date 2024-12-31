@@ -19,8 +19,10 @@ export const ValueMain: React.FC<valueProps> = ({
   topdescription,
   leftimage,
   className,
-  icon,
+  icon = [], // Defaulting to an empty array
 }) => {
+  const fallbackImage = "/path/to/default-image.jpg"; // Replace with your fallback image path
+
   return (
     <div className="global-margin h-[75vh] ">
       <div>
@@ -31,15 +33,25 @@ export const ValueMain: React.FC<valueProps> = ({
       </div>
       <div className="flex justify-between gap-14 ">
         <div className="w-full lg:w-1/2">
-          <Image
-            src={leftimage?.src}
-            alt="bhhh"
-            height={1000}
-            // width={400}
-            className={className}
-          />
+          {leftimage ? (
+            <Image
+              src={leftimage.src}
+              alt={leftimage.alt}
+              height={1000}
+              width={400}
+              className={className}
+            />
+          ) : (
+            <Image
+              src={fallbackImage}
+              alt="Fallback Image"
+              height={1000}
+              width={400}
+              className={className}
+            />
+          )}
         </div>
-        <div className="w-full  flex justify-center items-center ">
+        <div className="w-full flex justify-center items-center ">
           <ValueInfoBox icon={icon} />
         </div>
       </div>

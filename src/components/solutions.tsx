@@ -45,17 +45,17 @@ export const Solutions = () => {
   ];
 
   return (
-    <div className="w-screen h-[190vh] bg-black  flex-wrap sm:h-[180vh] md:bg-black lg:h-[120vh] lg:bg-black ">
+    <div className="w-screen h-[190vh] bg-black flex-wrap sm:h-[180vh] md:bg-black lg:h-[120vh] lg:bg-black ">
       <div>
-        <div className=" global-margin h-screen">
-          <div className=" lg:w-[764px] sm:w-fit md:w-full h-fit">
+        <div className="global-margin h-screen">
+          <div className="lg:w-[764px] sm:w-fit md:w-full h-fit">
             <div className="py-10">
               <h1 className="text-white text-sm sm:text-3xl md:text-2xl lg:text-4xl font-extrabold uppercase text-start">
                 Packaged financial solutions for Banks and Credit Unions
               </h1>
               <p className="text-gray-200 text-sm text-start mt-4 lg:text-lg">
                 Deploy best-in-class and industry-specific customer experiences
-                to help your financial institution achieve its mission.
+                to help your financial institution achieve its mission.
               </p>
             </div>
           </div>
@@ -84,15 +84,14 @@ export const Solutions = () => {
                   <TabButton
                     label={tab.label}
                     icon={activeTab === index ? tab.icon2 : tab.icon}
-                    icon2={tab.icon}
-                    className="w-full h-[42px] "
+                    className="w-full h-[42px]"
                   />
                 </div>
               ))}
             </CustomSwiper>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4  mt-8 sm:mt-1 md:mt-2 lg:mt-8  ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-8 sm:mt-1 md:mt-2 lg:mt-8">
             <div className="flex justify-center">
               <div className="w-full h-[65vh] bg-yellow-300 flex justify-center items-center">
                 <Image
@@ -102,20 +101,19 @@ export const Solutions = () => {
                 />
               </div>
             </div>
-            <div className=" flex justify-center">
-              <div className="items-center absolute   h-[450px] w-full md:w-[520px] flex justify-center md:items-center lg:w-[520px]">
-                <div className=" p-4 relative ">
+            <div className="flex justify-center">
+              <div className="items-center absolute h-[450px] w-full md:w-[520px] flex justify-center md:items-center lg:w-[520px]">
+                <div className="p-4 relative">
                   <h1 className="uppercase text-3xl font-bold text-white">
                     {tabs[activeTab].title}
                   </h1>
-                  <p className="text-gray-300 py-6 ">
+                  <p className="text-gray-300 py-6">
                     {tabs[activeTab].description}
                   </p>
 
-                  <button className="bg-customPink-500 flex text-customWhite text-[12px] justify-center items-center w-fit font-bold py-[13px] px-[17px] lg:text-sm uppercase font-bold transition-colors duration-300 ease-in-out">
+                  <button className="bg-customPink-500 flex text-customWhite text-[12px] justify-center items-center w-fit font-bold py-[13px] px-[17px] lg:text-sm uppercase transition-colors duration-300 ease-in-out">
                     LEARN MORE
                     <span className="ml-2 inline-block transition-transform duration-300 ease-in-out hover:rotate-[-50deg]">
-                      {/* Image with hover effect */}
                       <Image src={white} alt="arrow" height={10} width={17} />
                     </span>
                   </button>

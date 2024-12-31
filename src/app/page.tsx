@@ -16,8 +16,8 @@ import { Customer } from "@/components/customer";
 export default function Home() {
   return (
     <>
-      <Navbar />
       {/* Home (Section) */}
+      <Navbar />
 
       <Banner />
       <ExperienceLayer />

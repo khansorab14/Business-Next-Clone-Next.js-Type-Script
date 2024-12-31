@@ -1,4 +1,5 @@
 "use client";
+
 import React, { ReactNode, useEffect, useState } from "react";
 import { BannerButtons } from "./banner-button";
 import Image, { StaticImageData } from "next/image";
@@ -19,14 +20,14 @@ interface BannerProps {
   autoSlide?: boolean;
   slideInterval?: number;
   buttonLabel?: string;
-  src: StaticImageData;
-  alt: string;
+  src?: StaticImageData | string; // Allow both types
+  alt?: string;
   className?: string;
   layout?: string;
 
   // video
-  videoSource: string;
-  mediaType: "image" | "video" | "slider";
+  videoSource?: string;
+  mediaType?: "image" | "video" | "slider";
 }
 
 export const MainBanner: React.FC<BannerProps> = ({
@@ -94,17 +95,17 @@ export const MainBanner: React.FC<BannerProps> = ({
         <div className="flex justify-center items-center w-full px-4 sm:px-8">
           <div className="flex flex-col justify-center w-full max-w-lg">
             <div className="flex flex-col gap-4">
-              {/* Top Heading */}
+              {/* Top Heading - ensure no nested <h1> */}
               {topheading && (
-                <h1 className="text-black text-sm sm:text-lg md:text-xl lg:text-2xl font-extrabold uppercase text-start">
+                <div className="text-black text-sm sm:text-lg md:text-xl lg:text-2xl font-extrabold uppercase text-start">
                   {topheading}
-                </h1>
+                </div>
               )}
 
               {/* Main Heading */}
-              <h1 className="text-black text-base sm:text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase text-start">
+              <h2 className="text-black text-base sm:text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase text-start">
                 {heading}
-              </h1>
+              </h2>
 
               {/* Description */}
               <p className="text-gray-400 text-sm sm:text-md lg:text-lg">
@@ -112,10 +113,13 @@ export const MainBanner: React.FC<BannerProps> = ({
               </p>
 
               {/* Button */}
-              <button className="bg-customPink-500 flex gap-2 items-center justify-center text-customWhite text-[14px] w-fit font-bold py-3 px-5 sm:py-4 sm:px-6">
-                {buttonLabel}
-                <Image src={src} alt={alt} className={`${className}`} />
-              </button>
+              {src &&
+                alt && ( // Ensure src and alt are defined
+                  <button className="bg-customPink-500 flex gap-2 items-center justify-center text-customWhite text-[14px] w-fit font-bold py-3 px-5 sm:py-4 sm:px-6">
+                    {buttonLabel}
+                    <Image src={src} alt={alt} className={`${className}`} />
+                  </button>
+                )}
             </div>
 
             {/* Navigation Buttons */}

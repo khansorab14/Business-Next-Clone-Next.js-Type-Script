@@ -1,6 +1,14 @@
 import React from "react";
 
-export const OfficeLocation = ({ title, address }) => {
+interface OfficeLocationProps {
+  title: string;
+  address: string;
+}
+
+export const OfficeLocation: React.FC<OfficeLocationProps> = ({
+  title,
+  address,
+}) => {
   return (
     <div>
       <h1 className="uppercase text-sm py-4 font-extrabold">{title}</h1>

@@ -1,9 +1,11 @@
+import { StaticImageData } from "next/image";
 import { InsightCard } from "./insight-card";
 import { ViewAll } from "./view-all-btn";
 
+// Updated interface to allow both string (URL) and StaticImageData
 interface InsightCardData {
-  cardImage: string;
-  icon: string;
+  cardImage: string | StaticImageData; // Allow both string (URL) and StaticImageData
+  icon: string | StaticImageData; // Allow both string (URL) and StaticImageData
   buttonText: string;
   title: string;
   description: string;
@@ -12,7 +14,7 @@ interface InsightCardData {
 interface InsightProps {
   headingTitle: string;
   subHeadingTitle: string;
-  cards: InsightCardData[];
+  cards: InsightCardData[]; // Array of InsightCardData
 }
 
 export const InsightCardCustom: React.FC<InsightProps> = ({

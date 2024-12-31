@@ -1,10 +1,10 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { CiCircleChevLeft, CiCircleChevRight } from "react-icons/ci";
 import CustomSwiper from "./swiper";
 
 // Customer Card Data Interface
 interface CustomerData {
-  image: string;
+  image: string; // Change from StaticImageData to string
   name: string;
   position: string;
   feedback: string;
@@ -14,8 +14,8 @@ interface CustomerData {
 interface CustomerProps {
   title: string;
   subTitle: string;
-  customers: CustomerData[];
-  icon: string;
+  customers?: CustomerData[]; // Allow customers to be optional
+  icon: StaticImageData | string;
   slidesPerView?: number;
   spaceBetween?: number;
   breakpoints?: Record<number, { slidesPerView: number; spaceBetween: number }>;
@@ -42,7 +42,7 @@ export const CustomerCardCustom: React.FC<CustomerProps> = ({
 
         {/* Swiper Section */}
         <SwiperSection
-          customers={customers}
+          customers={customers} // Passing customers as array or undefined
           icon={icon}
           slidesPerView={slidesPerView}
           spaceBetween={spaceBetween}
@@ -76,15 +76,15 @@ const HeadingSection: React.FC<HeadingSectionProps> = ({ title, subTitle }) => {
 
 // Swiper Section Component
 interface SwiperSectionProps {
-  customers: CustomerData[];
-  icon: string;
+  customers?: CustomerData[]; // Now accepts either an array or undefined
+  icon?: StaticImageData | string;
   slidesPerView: number;
   spaceBetween: number;
   breakpoints: Record<number, { slidesPerView: number; spaceBetween: number }>;
 }
 
 const SwiperSection: React.FC<SwiperSectionProps> = ({
-  customers,
+  customers = [], // Default to empty array if undefined
   icon,
   slidesPerView,
   spaceBetween,
@@ -98,15 +98,15 @@ const SwiperSection: React.FC<SwiperSectionProps> = ({
           <button className="bg-green-700">
             <CiCircleChevLeft
               style={{ width: "40px" }}
-              className="  swiper-button-prev fill-white  "
+              className="swiper-button-prev fill-white"
             />
           </button>
         </div>
-        <div className="absolute top-0 right-0 flex  z-10">
+        <div className="absolute top-0 right-0 flex z-10">
           <button>
             <CiCircleChevRight
               style={{ width: "40px" }}
-              className="text-4xl  fill-white swiper-button-next "
+              className="text-4xl fill-white swiper-button-next"
             />
           </button>
         </div>
@@ -114,6 +114,7 @@ const SwiperSection: React.FC<SwiperSectionProps> = ({
 
       {/* Custom Swiper */}
       <CustomSwiper
+        style={{}}
         slidesPerView={slidesPerView}
         spaceBetween={spaceBetween}
         navigation={{
@@ -144,9 +145,11 @@ const SwiperSection: React.FC<SwiperSectionProps> = ({
             </div>
 
             {/* Icon Section */}
-            <div className="py-4">
-              <Image src={icon} alt="Icon" width={50} height={50} />
-            </div>
+            {icon && (
+              <div className="py-4">
+                <Image src={icon} alt="Icon" width={50} height={50} />
+              </div>
+            )}
 
             {/* Feedback Section */}
             <div>

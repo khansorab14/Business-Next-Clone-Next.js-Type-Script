@@ -33,20 +33,12 @@ export const CustomerNextBanner: React.FC = () => {
           <span className="uppercase font-extrabold text-black">next</span>
         </h1>
       }
-      heading={
-        <h1 className="text-black text-sm sm:text-lg md:text-3xl lg:text-4xl font-extrabold uppercase text-start">
-          The future of banking is all about your customer.
-        </h1>
-      }
+      heading="  The future of banking is all about your customer."
       buttonLabel="LEARN MORE"
-      description={
-        <p className="text-gray-400 text-sm sm:text-md lg:text-lg">
-          A configurable solution for every role in your organization. With a
+      description="   A configurable solution for every role in your organization. With a
           comprehensive, and complete view of your customer, CRMNEXT will
           transform your front-line staff to be an essential component of your
-          retention and growth strategy.
-        </p>
-      }
+          retention and growth strategy."
       buttonStyle={{
         border: "1px solid transparent",
         color: "black",

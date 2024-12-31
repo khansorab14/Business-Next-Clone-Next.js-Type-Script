@@ -8,24 +8,24 @@ import { InsightCardCustom } from "../../insight-card-custom";
 
 const cards = [
   {
-    cardImage: Insight3,
-    icon: Icon1,
+    cardImage: Insight3.src, // Use the src property to extract the string URL
+    icon: Icon1.src,
     buttonText: "Blog",
     title: "Boosting loans & deposits: The blueprint for credit unions...",
     description:
       "A dynamic 360 View of Account Holder surfacing insights and recommended actions",
   },
   {
-    cardImage: Insight1,
-    icon: Icon3,
+    cardImage: Insight1.src,
+    icon: Icon3.src,
     buttonText: "Podcast",
     title: "Boosting loans & deposits: The blueprint for credit unions...",
     description:
       "A dynamic 360 View of Account Holder surfacing insights and recommended actions",
   },
   {
-    cardImage: Insight2,
-    icon: Icon2,
+    cardImage: Insight2.src,
+    icon: Icon2.src,
     buttonText: "Insights",
     title: "Boosting loans & deposits: The blueprint for credit unions...",
     description:
