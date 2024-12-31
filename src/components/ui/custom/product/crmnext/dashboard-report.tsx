@@ -12,12 +12,6 @@ const selectedImage = [
   { src: cover3, alt: "Retention Service" },
 ];
 
-const buttonData = [
-  "Acquire Relationships",
-  "Deepen Relationships",
-  "Retention Service",
-];
-
 export const DashboardReport: React.FC = () => {
   return (
     <>

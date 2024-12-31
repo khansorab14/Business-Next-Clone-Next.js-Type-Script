@@ -18,7 +18,6 @@ const buttonData = [
 ];
 
 export const Banner: React.FC = () => {
-  const selectedImage = images[2];
   return (
     <MainBanner
       mediaType="slider"

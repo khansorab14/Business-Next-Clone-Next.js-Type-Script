@@ -3,14 +3,14 @@ import Image, { StaticImageData } from "next/image";
 interface ButtonProps {
   label: string;
   icon: string | StaticImageData;
-  icon2: string | StaticImageData;
+
   className?: string;
 }
 
 export const TabButton: React.FC<ButtonProps> = ({
   label,
   icon,
-  icon2,
+
   className,
 }) => {
   return (
