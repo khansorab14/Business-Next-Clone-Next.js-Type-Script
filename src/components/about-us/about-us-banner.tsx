@@ -26,7 +26,6 @@ export const AboutUsBanner: React.FC = () => {
     <MainBanner
       staticImages={selectedImage}
       src={playIcon}
-      // layout="responsive"
       alt="Play Icon"
       className="w-4 h-4"
       buttonData={buttonData}
@@ -53,6 +52,8 @@ export const AboutUsBanner: React.FC = () => {
       imageStyle={{ borderRadius: "8px" }}
       autoSlide={false}
       slideInterval={5000}
+      videoSource="" // Provide a valid video source URL or path
+      mediaType="image" // Specify the type of media, e.g., "image" or "video"
     />
   );
 };
