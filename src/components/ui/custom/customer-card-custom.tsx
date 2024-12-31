@@ -4,7 +4,7 @@ import CustomSwiper from "./swiper";
 
 // Customer Card Data Interface
 interface CustomerData {
-  image: string; // Change from StaticImageData to string
+  image: string | StaticImageData; // Allow both StaticImageData and string
   name: string;
   position: string;
   feedback: string;
@@ -14,8 +14,8 @@ interface CustomerData {
 interface CustomerProps {
   title: string;
   subTitle: string;
-  customers?: CustomerData[]; // Allow customers to be optional
-  icon: StaticImageData | string;
+  customers: CustomerData[]; // Use CustomerData array here
+  icon: StaticImageData | string; // Icon can also be StaticImageData or string
   slidesPerView?: number;
   spaceBetween?: number;
   breakpoints?: Record<number, { slidesPerView: number; spaceBetween: number }>;
@@ -42,7 +42,7 @@ export const CustomerCardCustom: React.FC<CustomerProps> = ({
 
         {/* Swiper Section */}
         <SwiperSection
-          customers={customers} // Passing customers as array or undefined
+          customers={customers}
           icon={icon}
           slidesPerView={slidesPerView}
           spaceBetween={spaceBetween}
@@ -76,7 +76,7 @@ const HeadingSection: React.FC<HeadingSectionProps> = ({ title, subTitle }) => {
 
 // Swiper Section Component
 interface SwiperSectionProps {
-  customers?: CustomerData[]; // Now accepts either an array or undefined
+  customers: CustomerData[];
   icon?: StaticImageData | string;
   slidesPerView: number;
   spaceBetween: number;
@@ -93,8 +93,8 @@ const SwiperSection: React.FC<SwiperSectionProps> = ({
   return (
     <div className="relative">
       {/* Navigation Buttons */}
-      <div className="absolute top-[-50] right-0 flex  z-10">
-        <div className="absolute top-0 right-32 flex  z-10">
+      <div className="absolute top-[-50] right-0 flex z-10">
+        <div className="absolute top-0 right-32 flex z-10">
           <button className="bg-green-700">
             <CiCircleChevLeft
               style={{ width: "40px" }}
